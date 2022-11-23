@@ -1,18 +1,33 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { HiOutlineMenu } from "react-icons/hi";
 import styles from "./Header.module.css";
+
+const logo = (
+  <div>
+    <Link to="/" className={styles.link}>
+      <h2>
+        Jack <span className={styles.span}>Ecom</span>
+      </h2>
+    </Link>
+  </div>
+);
+
+const cart = (
+  <span>
+    <Link to="/cart">
+      cart
+      <FaShoppingCart size={20} />
+      <p>3</p>
+    </Link>
+  </span>
+);
 
 function Header() {
   return (
     <header>
       <div className={styles.header}>
-        <div>
-          <Link to="/" className={styles.link}>
-            <h2>
-              Jack <span className={styles.span}>Ecom</span>
-            </h2>
-          </Link>
-        </div>
+        {logo}
         <nav>
           <ul>
             <li>
@@ -20,21 +35,20 @@ function Header() {
             </li>
             <Link to="/contact">Contact Us</Link>
           </ul>
-          <div className={styles.header_right}>
+          <div className={styles.headerright}>
             <span>
               <Link to="/login">Login</Link>
               <Link to="/register">Register</Link>
               <Link to="/order-history">My orders</Link>
             </span>
-            <span>
-              <Link to="/cart">
-                cart
-                <FaShoppingCart size={20} />
-                <p>3</p>
-              </Link>
-            </span>
+            {cart}
           </div>
         </nav>
+
+        <div>
+          {cart}
+          <HiOutlineMenu size={20} />
+        </div>
       </div>
     </header>
   );

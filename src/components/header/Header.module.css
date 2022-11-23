@@ -26,8 +26,9 @@ header {
     color: orangered;
   }
 
-  .header_right {
+  .headerright {
     display: flex;
+    text-decoration: none;
   }
 
   .link {
@@ -46,4 +47,7 @@ header {
     list-style: none;
   }
 
-  
+  .menu_icon {
+    cursor: pointer;
+    display: none;
+  }
