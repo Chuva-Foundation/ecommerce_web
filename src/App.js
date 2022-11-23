@@ -1,15 +1,31 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
+import Contact from "./pages/contact/Contact";
 
-import Home from "./pages/Home";
-import Product from "./pages/Product";
-import Footer from "./layout/Footer";
+//import { Container } from "react-bootstrap";
+//import { LinkContainer } from "react-router-bootstrap";
+//import Navbar from "react-bootstrap/Navbar";
 
 function App() {
   return (
-    <Router>
+    <>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
+  );
+}
+
+export default App;
+
+/*<Router>
       <div>
         <header>
           <Navbar bg="dark" variant="dark">
@@ -30,8 +46,4 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
-  );
-}
-
-export default App;
+    </Router>*/
