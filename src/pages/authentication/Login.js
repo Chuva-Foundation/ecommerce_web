@@ -14,7 +14,7 @@ function Login() {
           <input type="text" placeholder="Email" required />
           <input type="password" placeholder="Password" required />
           <p>
-            <button>Login</button>
+            <button type="submit">Login</button>
           </p>
         </form>
         <span>
