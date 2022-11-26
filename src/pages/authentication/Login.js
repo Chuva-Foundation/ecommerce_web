@@ -1,4 +1,4 @@
-import styles from "./authentication.module.css";
+import styles from "./Authentication.module.css";
 import login from "../../images/login.webp";
 import { Link } from "react-router-dom";
 
@@ -8,10 +8,10 @@ function Login() {
       <div>
         <img src={login} alt="login" width={500} />
       </div>
-      <div>
+      <div className={styles.form}>
         <h2>Login</h2>
         <form>
-          <input type="text" placeholder="Email" required />
+          <input type="email" placeholder="Email" required />
           <input type="password" placeholder="Password" required />
           <p>
             <button type="submit">Login</button>
