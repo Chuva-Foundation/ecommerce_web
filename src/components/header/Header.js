@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaTimes } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import styles from "./Header.module.css";
 
@@ -19,13 +19,17 @@ const cart = (
     <Link to="/cart">
       cart
       <FaShoppingCart size={20} />
-      <p className={styles["cart-orders"]}>3</p>
+      <p className={styles["cart-orders"]}>0</p>
     </Link>
   </span>
 );
 
 function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+  //Side bar menu
+  //const [showMenu, setShowMenu] = useState(false);
+
+  //const toggleMenu = () => setShowMenu(!showMenu);
+  //const hideMenu = () => setShowMenu(false);
 
   return (
     <header>

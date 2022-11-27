@@ -51,8 +51,6 @@ header {
     top: -1rem;
     right: -1rem;
     font-weight: 300;
-    
-    
   }
 
   .logo {
@@ -84,4 +82,25 @@ header {
     transform: translateX(-200%);
   }
   
+  .nav-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateX();
+    transition: all 0.3s;
+  }
+
+  .show-nav-wrapper {
+    transform: translateX(100%);
+  }
+
+  .logo-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    }
   
