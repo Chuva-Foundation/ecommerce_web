@@ -52,7 +52,7 @@ function Register() {
         <div>
           <img src={register} alt="register" width={500} />
         </div>
-        <div>
+        <div className={styles.form}>
           <h2>Register</h2>
           <form onSubmit={registerUser}>
             <input
@@ -116,8 +116,9 @@ function Register() {
             </p>
           </form>
           <span>
-            <p>Have an account already?</p>
-            <Link to="/login">Login</Link>
+            <p>
+              Have an account already?<Link to="/login"> Login</Link>
+            </p>
           </span>
         </div>
       </section>

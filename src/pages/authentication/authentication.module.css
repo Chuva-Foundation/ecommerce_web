@@ -10,9 +10,38 @@
   padding: 6%;
 }
 
-.h2 {
+h2 {
   color: orangered;
+  text-align: center;
 }
 
+input {
+  display: block;
+  font-size: large;
+  font-weight: 300;
+  padding: 12px 20px;
+  margin: 12px 20px auto;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 3px;
+  outline: none;
+}
+
+button {
+  font-weight: 300;
+  padding: 12px 20px;
+  margin: 12px 20px auto;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  background-color: rgb(0, 63, 180);
+}
+
+p {
+  text-align: center;
+  text-decoration: none;
+}
   
  
