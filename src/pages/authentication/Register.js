@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "../../service/axios";
 import styles from "./Authentication.module.css";
 import register from "../../images/register.webp";
 
@@ -18,11 +19,29 @@ function Register() {
   //SET THE LOADING SCREEN WHEN USER CREATE ACCOUNT
   //const [loading, setLoading] = useState(false);
 
-  const registerUser = (e) => {
+  const userData = {
+    first_name: `${firstName}`,
+    last_name: `${lastName}`,
+    email: `${email}`,
+    password: `${password}`,
+    birth: `${date}`,
+    phone: `${phone}`,
+    adress: `${address}`,
+  };
+
+  const registerUser = async (e) => {
     //prevent reload from form
     e.preventDefault();
     if (password !== confirmationPassword) {
-      toast.error("Passwords should match!");
+      toast.error("Passwords don't match!");
+    }
+    try {
+      const resp = await axios.post("/users", userData).then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+    } catch (error) {
+      console.log(error);
     }
   };
 
