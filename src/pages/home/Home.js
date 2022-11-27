@@ -8,7 +8,7 @@ function Home() {
   const handleTest = async () => {
     try {
       console.log("Kenny tets");
-      const { data } = await axios.get("/hello");
+      const { data } = await axios.get("/items");
       console.log(data.name);
       setName(data.name);
     } catch (err) {
