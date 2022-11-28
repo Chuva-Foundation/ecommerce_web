@@ -40,6 +40,15 @@ function Register() {
         console.log(response.data);
         return response.data;
       });
+      //Clear inputbox if register was successfully
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setConfirmationPassword("");
+      setDate("");
+      setPhone("");
+      setAddress("");
     } catch (error) {
       console.log(error);
     }
