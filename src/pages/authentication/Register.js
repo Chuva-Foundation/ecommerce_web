@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "../../service/axios";
 import styles from "./Authentication.module.css";
 import register from "../../images/register.webp";
+import Loader from "../../components/loader/Loader";
 
 function Register() {
   const [firstName, setFirstName] = useState("");
@@ -16,8 +17,9 @@ function Register() {
   const [date, setDate] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  //SET THE LOADING SCREEN WHEN USER CREATE ACCOUNT
-  //const [loading, setLoading] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const userData = {
     first_name: `${firstName}`,
@@ -30,14 +32,18 @@ function Register() {
   };
 
   const registerUser = async (e) => {
-    //prevent reload from form
     e.preventDefault();
+    setLoading(true);
+
     if (password !== confirmationPassword) {
       toast.error("Passwords don't match!");
     }
     try {
       const resp = await axios.post("/users", userData).then((response) => {
         console.log(response.data);
+        setLoading(false);
+        navigate("/login");
+
         return response.data;
       });
       //Clear inputbox if register was successfully
@@ -50,12 +56,15 @@ function Register() {
       setPhone("");
       setAddress("");
     } catch (error) {
+      toast.error(error.message);
+      setLoading(false);
       console.log(error);
     }
   };
 
   return (
     <>
+      {loading && <Loader />}
       <ToastContainer />
       <section className={styles.authentication}>
         <div>
