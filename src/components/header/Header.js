@@ -1,6 +1,6 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaTimes } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import styles from "./Header.module.css";
 
@@ -38,11 +38,11 @@ function Header() {
 
         <nav>
           <div></div>
-          <ul>
+          <ul className={styles.ul}>
             <li>
               <Link to="/">Home</Link>
             </li>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">About Us</Link>
           </ul>
           <div className={styles["header-right"]}>
             <span className={styles.links}>
